@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Work To-Do</title>
+
+    <link
+        rel="stylesheet"
+        href="/static/style.css"
+    >
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- HEADER -->
+
+        <header>
+
+            <div>
+                <h1>Work To-Do</h1>
+
+                <p>
+                    Manage your tasks and stay organized.
+                </p>
+            </div>
+
+            <button
+                id="newTaskButton"
+                class="primary-button"
+            >
+                + New Task
+            </button>
+
+        </header>
+
+
+        <!-- STATISTICS -->
+
+        <section class="stats">
+
+            <div class="stat-card">
+
+                <span>Total Tasks</span>
+
+                <strong id="totalTasks">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span>Pending</span>
+
+                <strong id="pendingTasks">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span>Completed</span>
+
+                <strong id="completedTasks">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span>High Priority</span>
+
+                <strong id="highPriorityTasks">
+                    0
+                </strong>
+
+            </div>
+
+        </section>
+
+
+        <!-- TASK FORM -->
+
+        <section
+            id="taskFormContainer"
+            class="form-container hidden"
+        >
+
+            <h2>Add Task</h2>
+
+            <form id="taskForm">
+
+                <input
+                    type="hidden"
+                    id="taskId"
+                >
+
+
+                <label>
+                    Task Title
+                </label>
+
+                <input
+                    type="text"
+                    id="title"
+                    placeholder="e.g. Prepare monthly report"
+                    required
+                >
+
+
+                <label>
+                    Description
+                </label>
+
+                <textarea
+                    id="description"
+                    placeholder="Add task details..."
+                ></textarea>
+
+
+                <div class="form-row">
+
+                    <div>
+
+                        <label>
+                            Priority
+                        </label>
+
+                        <select id="priority">
+
+                            <option value="Low">
+                                Low
+                            </option>
+
+                            <option
+                                value="Medium"
+                                selected
+                            >
+                                Medium
+                            </option>
+
+                            <option value="High">
+                                High
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div>
+
+                        <label>
+                            Due Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="dueDate"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-buttons">
+
+                    <button
+                        type="submit"
+                        class="primary-button"
+                    >
+                        Save Task
+                    </button>
+
+                    <button
+                        type="button"
+                        id="cancelButton"
+                        class="secondary-button"
+                    >
+                        Cancel
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- CONTROLS -->
+
+        <section class="controls">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search tasks..."
+            >
+
+
+            <select id="filterSelect">
+
+                <option value="all">
+                    All Tasks
+                </option>
+
+                <option value="pending">
+                    Pending
+                </option>
+
+                <option value="completed">
+                    Completed
+                </option>
+
+                <option value="high">
+                    High Priority
+                </option>
+
+            </select>
+
+        </section>
+
+
+        <!-- TASK LIST -->
+
+        <section>
+
+            <div id="taskList"></div>
+
+            <div
+                id="emptyState"
+                class="empty-state"
+            >
+                No tasks found.
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <script src="/static/script.js"></script>
+
+</body>
+
+</html>
